@@ -5,8 +5,15 @@
   "description": "starter-gatsby",
   "author": "jaro124",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "tailwind",
+    "mdx"
   ],
+  "engines": {
+    "npm": "10.2.3",
+    "node": "20.10.0"
+  },
+  "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -16,17 +23,26 @@
   },
   "dependencies": {
     "@mdx-js/react": "^3.0.0",
-    "autoprefixer": "^10.4.16",
     "gatsby": "^5.13.1",
     "gatsby-plugin-image": "^3.13.0",
     "gatsby-plugin-mdx": "^5.13.0",
-    "gatsby-plugin-postcss": "^6.13.0",
     "gatsby-plugin-sharp": "^5.13.0",
     "gatsby-source-filesystem": "^5.13.0",
     "gatsby-transformer-sharp": "^5.13.0",
-    "postcss": "^8.4.33",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "gatsby-plugin-postcss": "^6.13.0",
+    "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaro124/starter-gatsby"
+  },
+  "bugs": {
+    "url": "https://github.com/jaro124/starter-gatsby/issues"
   }
 }
