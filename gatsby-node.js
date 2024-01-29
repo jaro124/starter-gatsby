@@ -2,7 +2,8 @@ const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
 
-    const blogPostTemplate = path.resolve(`./src/templates/page-blog-template.js`)
+  const blogPostTemplate = path.resolve(`./src/templates/page-blog-template.js`)  
+  const blogListTemplate = path.resolve(`./src/templates/page-list-blog-template.js`)
 
     const { createPage } = actions;
     
@@ -60,4 +61,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
 
     // Create blog-list pages
+    const postsPerPage = 2
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        component: `${blogListTemplate}`,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
 };

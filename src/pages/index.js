@@ -6,7 +6,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <h1 className="px-4"  >Strona index</h1>
-      <Link to='./blog/install'>Install</Link>
+      <Link to='/blog/install'>Install</Link>
     </Layout>
   )
 }
