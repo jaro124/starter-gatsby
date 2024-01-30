@@ -4,9 +4,9 @@ import PostTags from "./posttags"
 
 const PostHeader = ({ title, subtitle, date, tags }) => (
   <div>  
-    <h1 className="text-4xl font-medium text-primary mb-2">{title}</h1>
+    <h1 className="text-4xl font-medium text-indigo-800 text-primary mb-2">{title}</h1>
     <h2 className="font-medium text-sm text-indigo-400 mb-4 uppercase tracking-wide">{subtitle}</h2>
-    
+
     <div className="flex flex-wrap justify-between mt-4 w-full">
       <div className="w-full md:w-1/3 text-left">
         <PostDate date={date} /> 

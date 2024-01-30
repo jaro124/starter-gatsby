@@ -34,26 +34,32 @@ const PostListTemplate = ({
   return (
     <Layout>
       <div className="px-4">
-        <div className="max-w-4xl bg-secondary rounded-lg mx-auto my-8 p-16">
+        <div className="max-w-4xl bg-white rounded-lg mx-auto my-8 p-8">
           {edges.map((edge) => (
-            <div key={edge.node.id}>
-            <div className="space-y-2">  
-              <PostHeader title={edge.node.frontmatter.title} subtitle={edge.node.frontmatter.subtitle} date={edge.node.frontmatter.date} tags={edge.node.frontmatter.tags} />
+            <div className="p-8" key={edge.node.id}>
+              <PostHeader
+                title={edge.node.frontmatter.title}
+                subtitle={edge.node.frontmatter.subtitle}
+                date={edge.node.frontmatter.date}
+                tags={edge.node.frontmatter.tags}
+              />
               <div className="text-primary">{edge.node.excerpt}</div>
 
-              <div className="mt-4 mb-16">
-                <button className="bg-green-500 hover:bg-green-400 text-secondary font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
-                  <Link to={edge.node.frontmatter.slug}>Read more</Link>
+              <div className="mt-4">
+                <button
+                  aria-label="Read post"
+                  className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold hover:text-white py-2 px-4 border border-emerald-700 hover:border-transparent rounded mr-4 mt-2"
+                >
+                  <Link to={"/blog/" + edge.node.frontmatter.slug}>
+                    Read more
+                  </Link>
                 </button>
               </div>
             </div>
-            
-            </div>
           ))}
+
           <div>
-            <PostListNavigation 
-              numPages={numPages}
-              currentPage={currentPage} />
+            <PostListNavigation numPages={numPages} currentPage={currentPage} />
           </div>
         </div>
       </div>

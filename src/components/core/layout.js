@@ -4,6 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
 
+import "../../styles/global.css"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -17,7 +19,7 @@ const Layout = ({ children }) => {
   `)
   
   return (
-    <div>
+    <div className="content-transition duration-200 bg-gray-200">
       <Header />
       <div>
         <main>{children}</main>
