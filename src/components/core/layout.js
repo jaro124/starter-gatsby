@@ -6,6 +6,8 @@ import Footer from "./footer"
 
 import "../../styles/global.css"
 
+import { useTheme } from "./themeContext"
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query MyQuery {
@@ -17,9 +19,9 @@ const Layout = ({ children }) => {
         }
     }
   `)
-  
+  const { theme } = useTheme()
   return (
-    <div className="content-transition duration-200 bg-gray-200">
+    <div className={`${theme} content-transition duration-200 bg-background`}>
       <Header />
       <div>
         <main>{children}</main>

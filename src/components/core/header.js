@@ -1,8 +1,11 @@
 import { graphql, useStaticQuery, Link } from "gatsby";
 import React, { useState } from "react";
 
+import { useTheme } from "./themeContext"
+
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
+  const { toggleTheme } = useTheme()
   const { site } = useStaticQuery(graphql`
     query HeaderTitleQuery {
       site {
@@ -14,7 +17,7 @@ function Header() {
   `);
 
   return (
-    <header className="bg-gray-100 shadow-lg">
+    <header className="bg-secondary shadow-lg">
       <div className="flex flex-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-4">
         <Link className="flex items-center no-underline text-primary" to="/">
           <svg 
@@ -74,6 +77,26 @@ function Header() {
             </Link>
           ))}
 
+<button
+            aria-label="Toggle theme"
+            className="focus:outline-none mt-4 md:mt-0"
+            onClick={toggleTheme}>
+            <svg 
+              version="1.1" 
+              id="Capa_1" 
+              xmlns="http://www.w3.org/2000/svg" 
+              x="0px" 
+              y="0px"
+              width="24px" 
+              height="24px" 
+              viewBox="0 0 405.526 405.526" 
+              className="fill-current text-primary"
+            >
+		        <path d="M202.764,0C90.958,0,0,90.958,0,202.763c0,111.809,90.958,202.764,202.763,202.764
+		          c111.808,0,202.763-90.955,202.763-202.764C405.526,90.958,314.571,0,202.764,0z M22.952,202.763
+		          c0-99.146,80.665-179.811,179.812-179.811v359.623C103.616,382.574,22.952,301.91,22.952,202.763z"/>
+            </svg>
+          </button> 
         
         </nav>
 

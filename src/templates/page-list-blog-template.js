@@ -34,7 +34,7 @@ const PostListTemplate = ({
   return (
     <Layout>
       <div className="px-4">
-        <div className="max-w-4xl bg-white rounded-lg mx-auto my-8 p-8">
+        <div className="max-w-4xl bg-secondary rounded-lg mx-auto my-8 p-8">
           {edges.map((edge) => (
             <div className="p-8" key={edge.node.id}>
               <PostHeader

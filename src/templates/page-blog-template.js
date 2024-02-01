@@ -7,8 +7,13 @@ import {
   Paragraf,
   H1,
   H2,
+  H3,
+  H4,
+  H5,
+  H6,
   NumberedList,
   DiscList,
+  MyBlockquote,
 } from "../components/core/mdx-layout.js";
 import { MDXProvider } from "@mdx-js/react";
 
@@ -32,7 +37,7 @@ const PostTemplate = ({ data, children, pageContext }) => {
   return (
     <Layout>
       <div className="px-4">
-        <div className="max-w-4xl bg-white rounded-lg mx-auto my-8 p-16">
+        <div className="max-w-4xl bg-secondary rounded-lg mx-auto my-8 p-16">
           <div>
             <PostHeader
               title={data.mdx.frontmatter.title}
@@ -42,14 +47,19 @@ const PostTemplate = ({ data, children, pageContext }) => {
             />
           </div>
 
-          <div className="mt-4 mx-auto prose prose-indigo prose-sm sm:prose lg:prose-lg xl:prose-xl">
+          <div className="mt-4 mx-auto text-primary">
             <MDXProvider
               components={{
                 p: Paragraf,
                 h1: H1,
                 h2: H2,
+                h3: H3,
+                h4: H4,
+                h5: H5,
+                h6: H6,
                 ol: NumberedList,
                 ul: DiscList,
+                blockquote: MyBlockquote
               }}
             >
               {children}
@@ -65,7 +75,7 @@ const PostTemplate = ({ data, children, pageContext }) => {
                     <p className="text-xs text-gray-500">Previous post</p>
                     {previous && (
                       <Link to={"/blog/" + previous.node.frontmatter.slug}>
-                        <p className="text-indigo-800 font-medium">
+                        <p className="block md:inline-block mt-4 md:mt-0 no-underline font-medium text-primary border-b-2 border-transparent hover:border-green-500">
                           {previous.node.frontmatter.title}
                         </p>
                       </Link>
@@ -79,7 +89,7 @@ const PostTemplate = ({ data, children, pageContext }) => {
                     <p className="text-xs text-gray-500">Next post</p>
                     {next && (
                       <Link to={"/blog/" + next.node.frontmatter.slug}>
-                        <p className="text-indigo-800 font-medium">
+                        <p className="block md:inline-block mt-4 md:mt-0 no-underline font-medium text-primary border-b-2 border-transparent hover:border-green-500">
                           {next.node.frontmatter.title}
                         </p>
                       </Link>

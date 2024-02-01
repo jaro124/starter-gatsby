@@ -5,10 +5,17 @@ title: "MDX with image"
 subtitle: "MDX with images and more"
 tags: ["gatsby","mdx","image"]
 ---
+
+import AstroImage from '/blog/20240112-images/gatsby-astronaut.png'
+
 Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
 Illum illo cupiditate molestias atque consequuntur ea quo cumque, odit velit sint similique? 
 Asperiores ratione aperiam tempora, alias corrupti deleniti quaerat molestiae.
 
 ## My MDX image
 
-![alt](./mario.png)
+<img
+  src={AstroImage}
+  title="Gatsby astronaut"
+  alt="Alt Gatsby astronaut"
+/>
