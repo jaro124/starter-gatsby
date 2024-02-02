@@ -16,7 +16,7 @@ const PostHeader = ({ title, subtitle, date, tags }) => (
       </div>
     </div>
     
-    <hr className="pb-6" />
+    <hr className="border-1 mb-4 border-indigo-400" />
 
 </div>
 )
