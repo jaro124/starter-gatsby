@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Layout from "../components/core/layout";
+import { Seo } from "../components/core/seo";
 import PostListNavigation from "../components/postlistnavigation";
 import PostHeader from "../components/postheader";
 
@@ -71,3 +72,11 @@ const PostListTemplate = ({
 };
 
 export default PostListTemplate;
+
+export const Head = () => (
+  <Seo
+    title="List posts page"
+    description="List posts page"
+    keywords={["Blog", "Post"]}
+  />
+);

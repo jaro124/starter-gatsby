@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Link } from "gatsby";
 import Layout from "../components/core/layout";
+import { Seo } from "../components/core/seo";
 import PostHeader from "../components/postheader";
 import {
   Paragraf,
@@ -106,3 +107,11 @@ const PostTemplate = ({ data, children, pageContext }) => {
 };
 
 export default PostTemplate;
+
+export const Head = ({data}) => (
+  <Seo
+    title={data.mdx.frontmatter.title}
+    description={data.mdx.frontmatter.subtitle}
+    keywords={data.mdx.frontmatter.tags}
+  />
+);
