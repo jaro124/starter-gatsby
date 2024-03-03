@@ -15,6 +15,7 @@ import {
   NumberedList,
   DiscList,
   MyBlockquote,
+  MyPRE,
 } from "../components/core/mdx-layout.js";
 import { MDXProvider } from "@mdx-js/react";
 
@@ -60,7 +61,8 @@ const PostTemplate = ({ data, children, pageContext }) => {
                 h6: H6,
                 ol: NumberedList,
                 ul: DiscList,
-                blockquote: MyBlockquote
+                blockquote: MyBlockquote,
+                pre: MyPRE,
               }}
             >
               {children}

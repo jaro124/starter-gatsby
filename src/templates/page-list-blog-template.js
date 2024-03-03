@@ -37,7 +37,7 @@ const PostListTemplate = ({
       <div className="px-4">
       <div className="max-w-4xl bg-secondary rounded-lg mx-auto my-8 p-16">
         <h1 className="text-2xl font-medium text-primary mb-2">My blog</h1>
-        <h2 className="font-medium text-sm text-indigo-400 mb-4 uppercase tracking-wide">List post of my blog</h2>
+        <h2 className="font-medium text-sm text-indigo-400 mb-4 uppercase tracking-wide">List of my blog posts</h2>
         <hr className="w-1/2 border-2 mb-4 border-blue-400" />
           {edges.map((edge) => (
             <div className="mt-8" key={edge.node.id}>
